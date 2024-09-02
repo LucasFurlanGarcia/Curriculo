@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Pessoal</title>
+    <style>
+        #portfolio{ text-align: center;
+            background-color: white;
+            box-sizing: border-box;
+        }
+        #educacao{
+            text-align: center;
+            background-color: white;
+            box-sizing: border-box;
+        }
+        h1,h2,p{
+            text-align: center;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+            margin: 0 auto;
+            padding: 0;
+        }
+        header{
+            text-align: center;
+            background-color: white;
+            padding:30px;
+            box-sizing: border-box;
+        }
+        .botoes{
+            overflow: hidden;
+            background-color: rgb(126, 124, 124);
+            
+        }
+        .botao{
+            float:left;
+        }
+        .botao button{
+            background-color: inherit;
+            border:none;
+            outline:none;
+            cursor:pointer;
+            padding: 10px 15px;
+            transition: 0.3s;
+        }
+        .botao button:hover{
+            background-color: white;
+        }
+        .conteudo{
+            display:none;
+            clear:both;
+        }
+        #form{
+            width: 600px; 
+            margin: 0 auto; /* Centraliza o formulário horizontalmente */
+            padding: 20px;
+            box-sizing: border-box; 
+            background-color: white;  
+            border-radius: 5px; /* Borda arredondada */
+        }
+        #form img {
+        max-width: 100%; 
+        height: auto; 
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="PortfolioImage.png" width="300px" height="100px">  
+        <h1>Lucas Furlan de Sá Garcia</h1>  
+    </header>
+
+    <div class="botoes">
+        <div class="botao">
+            <button class="conteudolink" onclick="openTab(event,'inicio')">Sobre mim</button>
+        </div>
+        <div class="botao">
+            <button class="conteudolink" onclick="openTab(event,'educacao')">Formação educacional e idiomas </button>
+        </div>
+        <div class="botao">
+            <button class="conteudolink" onclick="openTab(event,'portfolio')">Portfólio</button>
+        </div>
+        <div class="botao">
+            <button class="conteudolink" onclick="openTab(event,'form')">Contato</button>
+        </div>
+    </div>
+
+    <div id="inicio" class="conteudo" style="display:block;">
+        <h2>Sobre mim</h2>
+        <p>Sou estudante da Uninter no curso de Analise e Desenvolvimento de Sistemas. Trabalho como auxiliar administrativo. Tenho 26 anos. Sou morador da cidade de Santo André. Meus hobbies favoritos são: tocar guitarra, ver filmes e series e ir a academia.</p>   
+    </div>
+
+    <div id="educacao" class="conteudo" style="display:block;">
+        <img src="formacao.jpg" width="300px" height="200px"> 
+        <h2>Formação Educacional</h2>
+        <p>Cursei o ensino fundamental e médio na escola estadual E.E. Prof. Generoso Alves de Siqueira e fiz aprendizagem industrial de mecânico de usinagem no SENAI. 
+        Cursei ensino superior em tecnologia em Mecatrônica Industrial no ano de 2016 a 2018 pela Anhanguera UniABC. Possuo conhecimento em Ingles no nível intermediário.
+        Atualmente trabalho no cargo de auxiliar administrativo, em uma escola municipal, na área da educação, no municipio de Santo André.           
+        </p>
+    </div>
+
+    <div id="portfolio" class="conteudo" style="display:block;">
+        <img src="portfolio.jpeg" width="450px" height="150">
+        <h2>PORTFÓLIO</h2>
+        <p>Segue link do portólio:<a href='https://github.com/LucasFurlanGarcia'>Portfólio</a>    
+        </p>
+    </div>
+
+
+    <div id="form" class="conteudo" style="display:block;">
+        <img src="Contato.jpg" width="400px"height='213px'>
+        <h1>Contato</h1>
+        <p>Digite seus dados e escreva sua mensagem:</p>
+        <form>
+            <table>
+                <tr>
+                    <th>
+                        <label for="nome">Nome:</label>
+                    </th>
+                    <td>
+                        <input type="text" name="nome" id="nome">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="email">E-mail:</label>
+                    </th>
+                    <td>
+                        <input type="email" name="email" id="email">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="mensagem">Digite sua mensagem:</label>
+                    </th>
+                    <td>
+                        <textarea name="mensagem" rows="10" cols="50"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button>Enviar</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+
+    <script>
+        function openTab(evt, conteudonome) {
+            var i, conteudo, conteudolink;
+            conteudo = document.getElementsByClassName('conteudo');
+            for (i = 0; i < conteudo.length; i++) {
+                conteudo[i].style.display = 'none';
+            }
+            conteudolink = document.getElementsByClassName('conteudolink');
+            for (i = 0; i < conteudolink.length; i++) {
+                conteudolink[i].classList.remove('active');
+            }
+            document.getElementById(conteudonome).style.display = 'block';
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
